@@ -29,7 +29,7 @@ public native int hashCode();
 - **浅拷贝**：浅拷贝会在堆上创建一个新的对象（区别于引用拷贝的一点），不过，如果原对象内部的属性是引用类型的话，浅拷贝会直接复制内部对象的引用地址，也就是说拷贝对象和原对象共用同一个内部对象。
 - **深拷贝** ：深拷贝会完全复制整个对象，包括这个对象所包含的内部对象。
 
-![img](https://s2.loli.net/2022/03/24/d5MiJbyP1oNe4DH.png)
+![img](http://picture.lingzero.cn/d5MiJbyP1oNe4DH.png)
 
 ### 4.String
 
@@ -43,13 +43,13 @@ public native int hashCode();
 
 ![types-of-exceptions-in-java](https://javaguide.cn/assets/types-of-exceptions-in-java.62f25be2.png)
 
-![img](https://guide-blog-images.oss-cn-shenzhen.aliyuncs.com/2020-12/Java%E5%BC%82%E5%B8%B8%E7%B1%BB%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84%E5%9B%BE2.png)
+![img](http://picture.lingzero.cn/Java%E5%BC%82%E5%B8%B8%E7%B1%BB%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84%E5%9B%BE2.png)
 
 ### 6.IO
 
 #### 序列化
 
-![img](https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/2020-8/a478c74d-2c48-40ae-9374-87aacf05188c.png)
+![img](http://picture.lingzero.cn/a478c74d-2c48-40ae-9374-87aacf05188c.png)
 
 #### IO流
 
@@ -57,6 +57,6 @@ public native int hashCode();
 - 按照操作单元划分，可以划分为字节流和字符流；
 - 按照流的角色划分为节点流和处理流。
 
-![IO-操作方式分类](https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/2019-6/IO-%E6%93%8D%E4%BD%9C%E6%96%B9%E5%BC%8F%E5%88%86%E7%B1%BB.png)
+![IO-操作方式分类](http://picture.lingzero.cn/IO-%E6%93%8D%E4%BD%9C%E6%96%B9%E5%BC%8F%E5%88%86%E7%B1%BB.png)
 
-![IO-操作对象分类](https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/2019-6/IO-%E6%93%8D%E4%BD%9C%E5%AF%B9%E8%B1%A1%E5%88%86%E7%B1%BB.png)
+![IO-操作对象分类](http://picture.lingzero.cn/IO-%E6%93%8D%E4%BD%9C%E5%AF%B9%E8%B1%A1%E5%88%86%E7%B1%BB.png)
