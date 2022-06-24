@@ -4,7 +4,7 @@
 
 JVM 是可运行 Java 代码的假想计算机 ，包括一套字节码指令集、一组寄存器、一个栈、一个垃圾回收，堆 和 一个存储方法域。JVM 是运行在操作系统之上的，它与硬件没有直接的交互。
 
-![image-20220324203613937](http://picture.lingzero.cn/img/20220326220902.png)
+![image-20220324203613937](https://picture.lingzero.cn/img/20220326220902.png)
 
 （2）运行过程
 
@@ -18,7 +18,7 @@ JVM 是可运行 Java 代码的假想计算机 ，包括一套字节码指令集
 存在多个虚拟机实例。程序退出或者关闭，则虚拟机实例消亡，多个虚拟机实例之间数据不
 能共享。
 
-![image-20220324204250898](http://picture.lingzero.cn/img/20220326220919.png)
+![image-20220324204250898](https://picture.lingzero.cn/img/20220326220919.png)
 
 ### 1.线程 
 
@@ -30,7 +30,7 @@ Hotspot JVM 后台运行的系统线程主要有下面几个:
 
 ### 2.JVM 内存区域
 
-![image-20220324213109283](http://picture.lingzero.cn/img/20220326220923.png)
+![image-20220324213109283](https://picture.lingzero.cn/img/20220326220923.png)
 
 JVM 内存区域主要分为线程私有区域【程序计数器、虚拟机栈、本地方法区】、线程共享区域【JAVA 堆、方法区】、直接内存.
 
@@ -42,7 +42,7 @@ JVM 内存区域主要分为线程私有区域【程序计数器、虚拟机栈�
 
 **直接内存并不是 JVM 运行时数据区的一部分,** 但也会被频繁的使用: 在 JDK 1.4 引入的 **`NIO` 提供了基于 Channel 与 Buffer 的 IO 方式, 它可以使用 Native 函数库直接分配堆外内存, 然后使用DirectByteBuffer 对象作为这块内存的引用进行操作(详见: [Java I/O 扩展](https://blog.csdn.net/zjf280441589/article/details/50526810)), 这样就避免了在 Java堆和 Native 堆中来回复制数据, 因此在一些场景中可以显著提高性能。**
 
-![image-20220324213711834](http://picture.lingzero.cn/img/20220326220928.png)
+![image-20220324213711834](https://picture.lingzero.cn/img/20220326220928.png)
 
 #### 2.1. 程序计数器(线程私有) 
 
@@ -58,7 +58,7 @@ JVM 内存区域主要分为线程私有区域【程序计数器、虚拟机栈�
 
 `栈帧（ Frame）`是用来存储数据和部分过程结果的数据结构，同时也被用来处理动态链接 (Dynamic Linking)、 方法返回值和异常分派（ Dispatch Exception）。**栈帧随着方法调用而创建，随着方法结束而销毁**——无论方法是正常完成还是异常完成（抛出了在方法内未被捕获的异常）都算作方法结束。
 
-![image-20220324214130351](http://picture.lingzero.cn/img/20220326220933.png)
+![image-20220324214130351](https://picture.lingzero.cn/img/20220326220933.png)
 
 #### 2.3. 本地方法区(线程私有) 
 
@@ -74,13 +74,13 @@ JVM 内存区域主要分为线程私有区域【程序计数器、虚拟机栈�
 
 `运行时常量池（Runtime Constant Pool）`是方法区的一部分。Class 文件中除了有类的版本、字段、方法、接口等描述等信息外，还有一项信息是`常量池(Constant Pool Table）`，用于存放编译期生成的各种字面量和符号引用，这部分内容将在类加载后存放到方法区的运行时常量池中。 Java 虚拟机对 Class 文件的每一部分（自然也包括常量池）的格式都有严格的规定，每一个字节用于存储哪种数据都必须符合规范上的要求，这样才会被虚拟机认可、装载和执行。
 
-![图片](http://picture.lingzero.cn/img/20220331203057.png)
+![图片](https://picture.lingzero.cn/img/20220331203057.png)
 
 ### 3.JVM 运行时内存 
 
 Java 堆从 GC 的角度还可以细分为: `新生代`(`Eden 区`、`From Survivor 区`和 `To Survivor 区`)和`老年代`。 
 
-![image-20220324215032237](http://picture.lingzero.cn/img/20220326220938.png)
+![image-20220324215032237](https://picture.lingzero.cn/img/20220326220938.png)
 
 #### 3.1. 新生代 
 
@@ -142,7 +142,7 @@ MajorGC 采用**`标记清除算法`**：首先扫描一次所有老年代，标
 
 ### 4.垃圾回收与算法
 
-![image-20220324215812782](http://picture.lingzero.cn/img/20220326220945.png)
+![image-20220324215812782](https://picture.lingzero.cn/img/20220326220945.png)
 
 #### 4.1. 如何确定垃圾 
 
@@ -161,7 +161,7 @@ MajorGC 采用**`标记清除算法`**：首先扫描一次所有老年代，标
 最基础的垃圾回收算法，分为两个阶段，标注和清除。标记阶段标记出所有需要回收的对象，清
 除阶段回收被标记的对象所占用的空间。如图
 
-![image-20220324215924294](http://picture.lingzero.cn/img/20220326221021.png)
+![image-20220324215924294](https://picture.lingzero.cn/img/20220326221021.png)
 
 从图中我们就可以发现，该算法**最大的问题是内存碎片化严重**，后续可能发生大对象不能找到可利用空间的问题。
 
@@ -169,7 +169,7 @@ MajorGC 采用**`标记清除算法`**：首先扫描一次所有老年代，标
 
 为了解决 Mark-Sweep 算法内存碎片化的缺陷而被提出的算法。按内存容量将内存划分为等大小的两块。每次只使用其中一块，当这一块内存满后将尚存活的对象复制到另一块上去，把已使用的内存清掉，如图：
 
-![image-20220324220205261](http://picture.lingzero.cn/img/20220326221023.png)
+![image-20220324220205261](https://picture.lingzero.cn/img/20220326221023.png)
 
 这种算法虽然实现简单，内存效率高，不易产生碎片，但是**最大的问题是可用内存被压缩到了原本的一半。且存活对象增多的话，Copying 算法的效率会大大降低。**
 
@@ -178,7 +178,7 @@ MajorGC 采用**`标记清除算法`**：首先扫描一次所有老年代，标
 结合了以上两个算法，为了避免缺陷而提出。标记阶段和 Mark-Sweep 算法相同，**标记后不是清**
 **理对象，而是将存活对象移向内存的一端。然后清除端边界外的对象**。如图：
 
-![image-20220324220401142](http://picture.lingzero.cn/img/20220326221027.png)
+![image-20220324220401142](https://picture.lingzero.cn/img/20220326221027.png)
 
 #### 4.5. 分代收集算法 
 
@@ -188,7 +188,7 @@ MajorGC 采用**`标记清除算法`**：首先扫描一次所有老年代，标
 
 目前大部分 JVM 的 GC 对于新生代都采取 Copying 算法，因为新生代中每次垃圾回收都要回收大部分对象，即要复制的操作比较少，但通常并不是按照 1：1 来划分新生代。一般将新生代划分为一块较大的 Eden 空间和两个较小的 Survivor 空间(From Space, To Space)，每次使用Eden 空间和其中的一块 Survivor 空间，当进行回收时，将该两块空间中还存活的对象复制到另一块 Survivor 空间中。
 
-![image-20220324220604790](http://picture.lingzero.cn/img/20220326221030.png)
+![image-20220324220604790](https://picture.lingzero.cn/img/20220326221030.png)
 
 ##### 4.5.2. 老年代与标记复制算法 
 
@@ -250,7 +250,7 @@ MajorGC 采用**`标记清除算法`**：首先扫描一次所有老年代，标
 
 Java堆内存被划分为新生代和年老代两部分，新生代主要使用复制和标记-清除垃圾回收算法；年老代主要使用标记-整理垃圾回收算法，因此 java 虚拟中针对新生代和年老代分别提供了多种不同的垃圾收集器，JDK1.6 中 Sun HotSpot 虚拟机的垃圾收集器如下：
 
-![image-20220324221709592](http://picture.lingzero.cn/img/20220326221035.png)
+![image-20220324221709592](https://picture.lingzero.cn/img/20220326221035.png)
 
 #### 7.1.  Serial 垃圾收集器（单线程、复制算法） 
 
@@ -284,7 +284,7 @@ Parallel Scavenge 收集器也是一个新生代垃圾收集器，同样使用�
 
 新生代 Serial 与年老代 Serial Old 搭配垃圾收集过程图：
 
-![image-20220324222437840](http://picture.lingzero.cn/img/20220326221039.png)
+![image-20220324222437840](https://picture.lingzero.cn/img/20220326221039.png)
 
 
 
@@ -292,7 +292,7 @@ Parallel Scavenge 收集器也是一个新生代垃圾收集器，同样使用�
 
 新生代 Parallel Scavenge/ParNew 与年老代 Serial Old 搭配垃圾收集过程图：
 
-![image-20220324222708656](http://picture.lingzero.cn/img/20220326221041.png)
+![image-20220324222708656](https://picture.lingzero.cn/img/20220326221041.png)
 
 #### 7.5. Parallel Old 收集器（多线程标记整理算法）
 
@@ -302,7 +302,7 @@ Parallel Old 收集器是 Parallel Scavenge 的年老代版本，使用多线程
 
 新生代 Parallel Scavenge 和年老代 Parallel Old 收集器搭配运行过程图：
 
-![image-20220324222915981](http://picture.lingzero.cn/img/20220326221045.png)
+![image-20220324222915981](https://picture.lingzero.cn/img/20220326221045.png)
 
 #### 7.6. CMS 收集器（多线程标记清除算法） 
 
@@ -328,7 +328,7 @@ CMS 工作机制相比其他的垃圾收集器来说更复杂，整个过程分�
 
 CMS 收集器工作过程：
 
-![image-20220324223154900](http://picture.lingzero.cn/img/20220326221049.png)
+![image-20220324223154900](https://picture.lingzero.cn/img/20220326221049.png)
 
 #### 7.7. G1 收集器 
 
@@ -346,7 +346,7 @@ Garbage first 垃圾收集器是目前垃圾收集器理论发展的最前沿成
 
 最传统的一种 IO 模型，即在读写数据过程中会发生阻塞现象。当用户线程发出 IO 请求之后，内核会去查看数据是否就绪，如果没有就绪就会等待数据就绪，而用户线程就会处于阻塞状态，用户线程交出 CPU。当数据就绪之后，内核会将数据拷贝到用户线程，并返回结果给用户线程，用户线程才解除 block 状态。典型的阻塞 IO 模型的例子为：`data = socket.read();`如果数据没有就绪，就会一直阻塞在 read 方法。
 
-![图源：《深入拆解Tomcat & Jetty》](http://picture.lingzero.cn/img/20220327225649.png)
+![图源：《深入拆解Tomcat & Jetty》](https://picture.lingzero.cn/img/20220327225649.png)
 
 ##### 8.1.2. 同步非阻塞 IO 模型 
 
@@ -376,13 +376,13 @@ while(true){
 
 不过要注意的是，多路复用 IO 模型是通过轮询的方式来检测是否有事件到达，并且对到达的事件逐一进行响应。因此对于多路复用 IO 模型来说，**一旦事件响应体很大，那么就会导致后续的事件迟迟得不到处理，并且会影响新的事件轮询。**
 
-![img](http://picture.lingzero.cn/img/20220327225749.png)
+![img](https://picture.lingzero.cn/img/20220327225749.png)
 
 ##### 8.1.4. 信号驱动 IO 模型 
 
 在信号驱动 IO 模型中，当用户线程发起一个 IO 请求操作，会给对应的 socket 注册一个信号函数，然后用户线程会继续执行，当内核数据就绪时会发送一个信号给用户线程，用户线程接收到信号之后，便在信号函数中调用 IO 读写操作来进行实际的 IO 请求操作。
 
-![SIGIO.png](http://picture.lingzero.cn/img/20220327230547.png)
+![SIGIO.png](https://picture.lingzero.cn/img/20220327230547.png)
 
 ##### 8.1.5. 异步 IO 模型 
 
@@ -390,17 +390,17 @@ while(true){
 
 也就说在异步 IO 模型中，IO 操作的两个阶段都不会阻塞用户线程，这两个阶段都是由内核自动完成，然后发送一个信号告知用户线程操作已完成。用户线程中不需要再次调用 IO 函数进行具体的读写。这点是和信号驱动模型有所不同的，在信号驱动模型中，当用户线程接收到信号表示数据已经就绪，然后需要用户线程调用 IO 函数进行实际的读写操作；而在异步 IO 模型中，收到信号表示 IO 操作已经完成，不需要再在用户线程中调用 IO 函数进行实际的读写操作。
 
-![img](http://picture.lingzero.cn/img/20220327230016.png)
+![img](https://picture.lingzero.cn/img/20220327230016.png)
 
 > 注意，异步 IO 是需要操作系统的底层支持，在 Java 7 中，提供了 Asynchronous IO。
 >
-> 更多参考： http://www.importnew.com/19816.html
+> 更多参考： https://www.importnew.com/19816.html
 
 
 
 #### 8.2 JAVA IO 包
 
-![image-20220324224315390](http://picture.lingzero.cn/img/20220326221101.png)
+![image-20220324224315390](https://picture.lingzero.cn/img/20220326221101.png)
 
 #### 8.3 JAVA NIO 
 
@@ -408,13 +408,13 @@ while(true){
 
 NIO 主要有三大核心部分：Channel(通道)，Buffer(缓冲区), Selector。传统 IO 基于字节流和字符流进行操作，**而 NIO 基于 Channel 和 Buffer(缓冲区)进行操作，数据总是从通道读取到缓冲区中，或者从缓冲区写入到通道中。**Selector(选择区)用于监听多个通道的事件（比如：连接打开，数据到达）。因此，单个线程可以监听多个数据通道。
 
-![NIO-model.png](http://picture.lingzero.cn/img/20220327230201.png)
+![NIO-model.png](https://picture.lingzero.cn/img/20220327230201.png)
 
 NIO 和传统 IO 之间第一个最大的区别是，**IO 是面向流的，NIO 是面向缓冲区的。**
 
 > 更多参考：
 >
-> http://www.ideabuffer.cn/2017/08/13/NIO%E6%8A%80%E6%9C%AF%E6%A6%82%E8%A7%88/
+> https://www.ideabuffer.cn/2017/08/13/NIO%E6%8A%80%E6%9C%AF%E6%A6%82%E8%A7%88/
 
 
 
@@ -428,7 +428,7 @@ NIO 和传统 IO 之间第一个最大的区别是，**IO 是面向流的，NIO 
 
 IO 的各种流是阻塞的。这意味着，当一个线程调用 read() 或 write()时，该线程被阻塞，直到有一些数据被读取，或数据完全写入。该线程在此期间不能再干任何事情了。 NIO 的非阻塞模式，使一个线程从某通道发送请求读取数据，但是它仅能得到目前可用的数据，如果目前没有数据可用时，就什么都不会获取。而不是保持线程阻塞，所以直至数据变的可以读取之前，该线程可以继续做其他的事情。 非阻塞写也是如此。一个线程请求写入一些数据到某通道，但不需要等待它完全写入，这个线程同时可以去做别的事情。 线程通常将非阻塞 IO 的空闲时间用于在其它通道上执行 IO 操作，所以一个单独的线程现在可以管理多个输入和输出通道（channel）。
 
-![image-20220324224655465](http://picture.lingzero.cn/img/20220326221121.png)
+![image-20220324224655465](https://picture.lingzero.cn/img/20220326221121.png)
 
 #### 8.4. Channel 
 
@@ -454,7 +454,7 @@ NIO 中的 Channel 的主要实现有：
 
 Buffer，故名思意，**缓冲区，实际上是一个容器，是一个连续数组**。Channel 提供从文件、网络读取数据的渠道，但是读取或写入的数据都必须经由 Buffer。 
 
-![image-20220324224958305](http://picture.lingzero.cn/img/20220326221112.png)
+![image-20220324224958305](https://picture.lingzero.cn/img/20220326221112.png)
 
 上面的图描述了从一个客户端向服务端发送数据，然后服务端接收数据的过程。客户端发送数据时，必须先将数据存入 Buffer 中，然后将 Buffer 中的内容写入通道。服务端这边接收数据必须通过 Channel 将数据读入到 Buffer 中，然后再从 Buffer 中取出数据来处理。 
 
@@ -469,7 +469,7 @@ Buffer，故名思意，**缓冲区，实际上是一个容器，是一个连续
   JVM 类加载机制分为五个部分：加载，验证，准备，解析，初始化，下面我们就分别来看一下这
  五个过程
 
-![image-20220324225156560](http://picture.lingzero.cn/img/20220326221128.png)
+![image-20220324225156560](https://picture.lingzero.cn/img/20220326221128.png)
 
 #### 9.1 类加载过程
 
@@ -549,7 +549,7 @@ Buffer，故名思意，**缓冲区，实际上是一个容器，是一个连续
 3. **负责加载用户路径（classpath）上的类库**。 
 JVM 通过双亲委派模型进行类的加载，当然我们也可以通过继承 java.lang.ClassLoader实现自定义的类加载器。
 
-![image-20220324230135299](http://picture.lingzero.cn/img/20220326221140.png)
+![image-20220324230135299](https://picture.lingzero.cn/img/20220326221140.png)
 
 #### 9.3. 双亲委派 
 
@@ -557,4 +557,4 @@ JVM 通过双亲委派模型进行类的加载，当然我们也可以通过继�
 
 采用双亲委派的一个好处是比如加载位于 rt.jar 包中的类 java.lang.Object，不管是哪个加载器加载这个类，最终都是委托给顶层的启动类加载器进行加载，这样就保证了**使用不同的类加载器最终得到的都是同样一个 Object 对象。**
 
-![image-20220324230317867](http://picture.lingzero.cn/img/20220326221215.png)
+![image-20220324230317867](https://picture.lingzero.cn/img/20220326221215.png)

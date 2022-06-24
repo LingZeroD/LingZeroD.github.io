@@ -10,7 +10,7 @@
 
 如果某个方法不能按照正常的途径完成任务，就可以通过另一种路径退出方法。在这种情况下会抛出一个封装了错误信息的对象。此时，这个方法会立刻退出同时不返回任何值。另外，调用这个方法的其他代码也无法继续执行，异常处理机制会将代码执行交给异常处理器
 
-![image-20220326235357851](http://picture.lingzero.cn/img/20220326235400.png)
+![image-20220326235357851](https://picture.lingzero.cn/img/20220326235400.png)
 
 java基础
 
@@ -81,7 +81,7 @@ int div(int a,int b) throws Exception{
 
 ### 反射机制概念 （运行状态中知道类所有的属性和方法）
 
-![img](http://picture.lingzero.cn/img/20220326233925.webp)
+![img](https://picture.lingzero.cn/img/20220326233925.webp)
 
 在 Java 中的反射机制是指在运行状态中**，对于任意一个类都能够知道这个类所有的属性和方法；并且对于任意一个对象，都能够调用它的任意一个方法**；这种动态获取信息以及动态调用对象方法的功能成为 Java 语言的反射机制。
 
@@ -218,7 +218,7 @@ RUNTIME:在运行时有效（即运行时保留）
 
 @Inherited 元注解是一个标记注解， @Inherited 阐述了某个被标注的类型是被继承的。如果一个使用了@Inherited 修饰的 annotation 类型被用于一个 class，则这个 annotation 将被用于该class 的子类
 
-![image-20220326234316886](http://picture.lingzero.cn/img/20220326234319.png)
+![image-20220326234316886](https://picture.lingzero.cn/img/20220326234319.png)
 
 
 
@@ -476,7 +476,7 @@ Java 平台允许我们在内存中创建可复用的 Java 对象，但一般情
 
 将一个对象的引用复制给另外一个对象，一共有三种方式。第一种方式是直接赋值，第二种方式是浅拷贝，第三种是深拷贝。这三种概念实际上都是为了拷贝对象
 
-![img](http://picture.lingzero.cn/img/20220326235248.png)
+![img](https://picture.lingzero.cn/img/20220326235248.png)
 
 ### 直接赋值复制
 
