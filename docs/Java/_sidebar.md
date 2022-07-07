@@ -1,5 +1,6 @@
 - [返回首页](/)
 - [Java](Java/)
+  - [AQS 探索](Java/AQS 探索.md)
   - [Java基础](Java/Java基础.md)
   - [Java基础2](Java/Java基础2.md)
   - [Java基础36讲](Java/Java基础36讲.md)
