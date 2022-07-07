@@ -311,7 +311,7 @@ ThreadLocal 有一个静态内部类 ThreadLocalMap，ThreadLocalMap 又包含�
 
 并发包 `java.util.concurrent` 的原子类都存放在`java.util.concurrent.atomic`下,如下图所示。
 
-![JUC原子类概览](https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/2019-6/JUC%E5%8E%9F%E5%AD%90%E7%B1%BB%E6%A6%82%E8%A7%88.png)
+![JUC原子类概览](https://picture.lingzero.cn/202207071410157.png)
 
 #### JUC 包中的原子类是哪 4 类?
 
