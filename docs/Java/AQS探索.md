@@ -49,7 +49,7 @@ AbstractQueuedSynchronizer 的等待队列示意如下所示，注意了，之�
 
 等待队列中每个线程被包装成一个 Node 实例，数据结构是链表，一个 FIFO 双向链表
 
-```Java
+```java
 static final class Node {
     
     static final Node SHARED = new Node();
