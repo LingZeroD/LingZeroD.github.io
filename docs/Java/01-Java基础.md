@@ -59,4 +59,4 @@ public native int hashCode();
 
 ![IO-操作方式分类](https://picture.lingzero.cn/IO-%E6%93%8D%E4%BD%9C%E6%96%B9%E5%BC%8F%E5%88%86%E7%B1%BB.png)
 
-![IO-操作对象分类](https://picture.lingzero.cn/IO-%E6%93%8D%E4%BD%9C%E5%AF%B9%E8%B1%A1%E5%88%86%E7%B1%BB.png)
+#### ![IO-操作对象分类](https://picture.lingzero.cn/IO-%E6%93%8D%E4%BD%9C%E5%AF%B9%E8%B1%A1%E5%88%86%E7%B1%BB.png)
