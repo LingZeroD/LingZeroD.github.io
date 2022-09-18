@@ -8,3 +8,5 @@
     - [5-MySQL面试题](面试/数据库/MySQL/5-MySQL面试题.md)
   - [Redis](面试/数据库/Redis/)
     - [1.Redis基础](面试/数据库/Redis/1.Redis基础.md)
+    - [2.redis原理](面试/数据库/Redis/2.redis原理.md)
+    - [3.Redis实战](面试/数据库/Redis/3.Redis实战.md)
